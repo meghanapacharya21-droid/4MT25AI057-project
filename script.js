@@ -700,136 +700,44 @@ function displayTimetable() {
 
 function getSlotStart(slotIndex) {
     const [hour, minute] = getElement("studyStart").value.split(":").map(Number);
-    const session = Number(getElement("sessionDuration").value);
-    const pause = Number(getElement("breakDuration").value);
+    const session = Numbe
+   
 
-    return hour * 60 + minute + slotIndex * (session + pause);
-}
+       
 
-function getSlotEnd(slotIndex) {
-    const session = Number(getElement("sessionDuration").value);
-    return getSlotStart(slotIndex) + session;
-}
 
-// ==========================================
-// DISPLAY PROGRESS AT THE END
-// ==========================================
 
-function displayProgress() {
-    const container = getElement("progressSection");
+   
 
-    if (tasks.length === 0 || timetable.length === 0) {
-        container.innerHTML =
-            `<p class="help-text">Generate a timetable to see your progress here.</p>`;
-        return;
-    }
+    
+            
+    
 
-    const allSessions = timetable.flatMap(day =>
-        day.sessions.filter(session => session !== null)
-    );
+   
 
-    const completedSessions = allSessions.filter(
-        session => session.completed
-    );
 
-    const total = allSessions.length;
-    const completed = completedSessions.length;
+       
 
-    const overallPercent = total === 0
-        ? 0
-        : Math.round((completed / total) * 100);
+    
 
-    const taskProgress = tasks.map(task => {
-        const taskSessions = allSessions.filter(
-            session => session.taskId === task.id
-        );
 
-        const finished = taskSessions.filter(
-            session => session.completed
-        ).length;
+   
 
-        const planned = taskSessions.length;
+           
 
-        // This combines the user's starting completion percentage
-        // with completed scheduled sessions.
-        const additionalPercent = planned === 0
-            ? 0
-            : (finished / planned) * (100 - task.completion);
+    
+    
 
-        const percent = Math.min(
-            100,
-            Math.round(task.completion + additionalPercent)
-        );
 
-        return {
-            name: task.name,
-            subject: task.subject,
-            percent
-        };
-    });
+   
+                
+        
+    
+            
+                    
+           
 
-    container.innerHTML = `
-        <div class="progress-summary">
-            <div class="progress-stat">
-                <strong>${overallPercent}%</strong>
-                <span>Scheduled Sessions Progress</span>
-            </div>
 
-            <div class="progress-stat">
-                <strong>${completed}</strong>
-                <span>Sessions Completed</span>
-            </div>
+      
 
-            <div class="progress-stat">
-                <strong>${total}</strong>
-                <span>Total Scheduled Sessions</span>
-            </div>
-
-            <div class="progress-stat">
-                <strong>${tasks.length}</strong>
-                <span>Total Tasks</span>
-            </div>
-        </div>
-
-        <h3>Overall Scheduled Progress</h3>
-
-        <div class="progress-track">
-            <div class="progress-fill" style="width: ${overallPercent}%"></div>
-        </div>
-
-        <p class="help-text">${overallPercent}% of scheduled study sessions completed.</p>
-
-        <h3>Subject-wise Task Progress</h3>
-
-        ${taskProgress.map(task => `
-            <div class="progress-row">
-                <div class="progress-label">
-                    <span>
-                        ${escapeHTML(task.name)}
-                        <small>(${escapeHTML(task.subject)})</small>
-                    </span>
-                    <span>${task.percent}%</span>
-                </div>
-
-                <div class="progress-track">
-                    <div class="progress-fill" style="width: ${task.percent}%"></div>
-                </div>
-            </div>
-        `).join("")}
-    `;
-}
-
-// ==========================================
-// BUTTON EVENT LISTENERS
-// ==========================================
-
-getElement("loadSubjectsBtn").addEventListener("click", loadSubjects);
-
-getElement("addSubjectBtn").addEventListener("click", addCustomSubject);
-
-getElement("addTaskBtn").addEventListener("click", addTask);
-
-getElement("generateBtn").addEventListener("click", generateTimetable);
-
-// Load demo subjects automatically when the page opens.
-loadSubjects();
+        
