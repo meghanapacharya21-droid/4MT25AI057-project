@@ -1,0 +1,418 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #171827;
+    color: #f4f0fa;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #222438;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #41435d;
+}
+
+header h2 {
+    color: #c0aaff;
+}
+
+header span {
+    color: #aaaac1;
+}
+
+main {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.hero {
+    padding: 45px 0;
+}
+
+.hero p:first-child {
+    color: #c0aaff;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #f4f0fa;
+}
+
+.hero p:last-child {
+    color: #aaaac1;
+}
+
+.panel, .stat {
+    background: #24263b;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #41435d;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #c0aaff;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 25px 0;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-size: 13px;
+    color: #d4d0e5;
+}
+
+input, select {
+    padding: 12px;
+    background: #171827;
+    border: 1px solid #51536d;
+    border-radius: 8px;
+    color: white;
+    width: 100%;
+}
+
+input:focus, select:focus {
+    outline: 1px solid #bda9ff;
+}
+
+.subject-limit {
+    background: #191b2d;
+    padding: 16px;
+    border: 1px solid #41435d;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.subject-limit label {
+    flex: 1;
+}
+
+#subjectLimit {
+    max-width: 150px;
+}
+
+#subjectCounter {
+    color: #8ed6b3;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.subject-selection {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+button {
+    border: none;
+    padding: 13px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #bba7ff;
+    color: #201d32;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #d0c2ff;
+}
+
+.subject-card {
+    background: #191b2d;
+    border: 1px solid #44465e;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
+.subject-card strong {
+    align-self: center;
+    font-size: 13px;
+}
+
+.remove {
+    background: #633542;
+    color: white;
+}
+
+.generate {
+    width: 100%;
+    margin-top: 25px;
+    background: #bba7ff;
+    font-size: 15px;
+}
+
+.note {
+    color: #aaaac1;
+    font-size: 12px;
+}
+
+#error {
+    color: #ff777e;
+}
+
+.hidden {
+    display: none;
+}
+
+#planner {
+    margin: 45px 0;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat p {
+    color: #aaaac1;
+}
+
+.stat h2 {
+    font-size: 30px;
+}
+
+.bar {
+    background: #41435d;
+    height: 7px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#overallBar {
+    height: 100%;
+    background: #8ed6b3;
+    width: 0%;
+}
+
+.legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: #aaaac1;
+    font-size: 12px;
+    margin: 18px 0;
+}
+
+.table-container {
+    overflow-x: auto;
+    background: #24263b;
+    border-radius: 12px;
+    border: 1px solid #41435d;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    border: 1px solid #41435d;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #343650;
+    color: #c0aaff;
+}
+
+td {
+    min-width: 125px;
+}
+
+.session {
+    background: #39334f;
+    border-left: 4px solid #bba7ff;
+    padding: 10px;
+    border-radius: 7px;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.session.revision {
+    background: #263d4b;
+    border-left-color: #8fc9e8;
+}
+
+.session.done {
+    background: #234236;
+    border-left-color: #8ed6b3;
+}
+
+.session input {
+    width: auto;
+    accent-color: #8ed6b3;
+}
+
+.session label {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 8px;
+}
+
+#deadline {
+    text-align: right;
+    margin: 15px 0 30px;
+}
+
+.deadline-item {
+    display: inline-block;
+    background: #542c3a;
+    color: #ff9da6;
+    border: 1px solid #b65b6b;
+    border-radius: 8px;
+    padding: 13px;
+    margin: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.progress-card {
+    background: #24263b;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid #41435d;
+    margin: 12px 0;
+}
+
+.progress-card p {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.progress-fill {
+    height: 7px;
+    background: #8ed6b3;
+    border-radius: 10px;
+}
+
+.progress-track {
+    background: #41435d;
+    border-radius: 10px;
+}
+
+.progress-card small {
+    display: block;
+    color: #aaaac1;
+    margin-top: 8px;
+}
+
+.print {
+    margin: 20px 0;
+}
+
+.clear {
+    margin: 20px 10px;
+    background: #633542;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #aaaac1;
+}
+
+@media(max-width:750px) {
+
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .subject-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+}
+
+@media(max-width:450px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subject-selection,
+    .subject-limit {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #subjectLimit {
+        max-width: 100%;
+    }
+
+}
+
+@media print {
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    header, .hero, .panel, footer,
+    .print, .clear, .progress-card {
+        display: none !important;
+    }
+
+    #planner {
+        display: block !important;
+    }
+
+    .table-container {
+        overflow: visible;
+    }
+
+    table {
+        min-width: 0;
+        font-size: 9px;
+    }
+
+    th, td {
+        color: black;
+        border: 1px solid #aaa;
+    }
+
+    .session {
+        background: #eee;
+        color: black;
+    }
+
+}
